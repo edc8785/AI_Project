@@ -13,8 +13,6 @@ predictor = Predictor()
 train = preprocessor.get_train_dataset()
 test = preprocessor.get_test_dataset()
 
-"""
-trainer.run(train)
-"""
 
+trainer.run(train)
 predictor.run(test)

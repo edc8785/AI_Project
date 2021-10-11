@@ -1,6 +1,6 @@
 class Config(object):
-    model_path = "MODEL/"
-    data_path = "DATA/"
+    model_path = "../../DB/235713_신용카드 사용자 연체 예측 AI 경진대회_data/MODEL/"
+    data_path = "../../DB/235713_신용카드 사용자 연체 예측 AI 경진대회_data/DATA/"
 
 
     train_data = "train.csv"

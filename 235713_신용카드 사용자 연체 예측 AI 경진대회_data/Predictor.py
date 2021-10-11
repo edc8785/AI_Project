@@ -11,7 +11,7 @@ class Predictor(object):
 
 
     def run(self, test):
-        sub = pd.read_csv(Config.data_path + Config.sub_data)
+        sub = pd.read_csv(Config.data_path + Config.sub_data, engine="python")
         lgb_model = self.model_load()
         
 
