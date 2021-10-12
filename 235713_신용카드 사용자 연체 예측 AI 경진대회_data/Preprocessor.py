@@ -42,8 +42,16 @@ class Preprocessor(object):
             data['house_type'].astype(str) + '_' + data['occyp_type'].astype(str)
 
         data.reset_index(drop=True, inplace=True)
+        data.drop(["index"], axis=1, inplace=True)
         
         return(data)
+
+
+    def get_train_dataset(self):
+        return self.preprocess(self.train)
+
+    def get_test_dataset(self):
+        return self.preprocess(self.test)
 
 
     def one_hot_encoder_fit(self):
@@ -75,7 +83,7 @@ class Preprocessor(object):
 
     
 
-    def get_train_test_dataset(self):
+    def get_train_test_dataset_onehot(self):
         one_hot, object_col = self.one_hot_encoder_fit()
         
         train = self.preprocess(self.train)
@@ -85,11 +93,6 @@ class Preprocessor(object):
         test = self.one_hot_encoder_transform(test, one_hot, object_col)
         
         return train, test
-
-
-    def train_val_split(self):
-        self.get_train_dataset()
-
 
         
         
